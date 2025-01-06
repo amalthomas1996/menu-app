@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "rollup -c --no-sourcemap",
+    "build": "rollup -c rollup.config.js",
+    "start": "node dist/bundle.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -24,6 +25,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
+    "rollup": "^4.30.0",
     "vite": "^6.0.5"
   }
 }
