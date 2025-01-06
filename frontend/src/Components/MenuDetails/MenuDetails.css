@@ -31,7 +31,9 @@
 .menu-container-wrapper {
   border: 1px solid white;
   padding-bottom: 80px;
-  border-radius: 10px;
+
+
+
 }
 
 .menu-title::before,
@@ -109,7 +111,7 @@
   width: 48%;
   padding: 20px;
   border-radius: 10px;
-
+  border-bottom: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -167,6 +169,7 @@
 @media screen and (max-width: 1024px) {
   .menu-item {
     width: 48%;
+    border-top: 20px;
   }
 
   .menu-title {
@@ -177,6 +180,7 @@
 @media screen and (max-width: 768px) {
   .menu-item {
     width: 100%;
+    border-top: 20px;
   }
 
   .menu-item-container {
@@ -201,6 +205,7 @@
   .menu-item {
     width: 100%;
     padding: 15px;
+
   }
 
   .item-header {
@@ -221,6 +226,6 @@
 
   .top-left-image,
   .bottom-right-image {
-    width: 100px;
+    width: 70px;
   }
 }

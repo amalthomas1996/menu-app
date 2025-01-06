@@ -14,10 +14,12 @@
 
 .footer-left {
   text-align: left;
+  margin-left: 100px;
 }
 
 .footer-right {
   text-align: right;
+  margin-right: 100px;
 }
 
 .footer-link {
