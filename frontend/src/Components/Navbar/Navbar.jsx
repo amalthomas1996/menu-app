@@ -39,6 +39,12 @@ const Navbar = () => {
           HOME
         </li>
         <li
+          className={activeLink === "ADMIN" ? "active" : ""}
+          onClick={() => handleLinkClick("ADMIN")}
+        >
+          <Link to="/admin">ADMIN</Link>
+        </li>
+        <li
           className={activeLink === "MENU" ? "active" : ""}
           onClick={() => handleLinkClick("MENU")}
         >
@@ -55,12 +61,6 @@ const Navbar = () => {
           onClick={() => handleLinkClick("CONTACT US")}
         >
           CONTACT US
-        </li>
-        <li
-          className={activeLink === "ADMIN" ? "active" : ""}
-          onClick={() => handleLinkClick("ADMIN")}
-        >
-          <Link to="/admin">ADMIN</Link>
         </li>
       </ul>
     </nav>
