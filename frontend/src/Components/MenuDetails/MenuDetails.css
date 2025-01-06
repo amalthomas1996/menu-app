@@ -1,5 +1,6 @@
-/* Updated CSS for Menu Details */
 .menu-details-container {
+  position: relative;
+  /* Make this container the positioning context */
   width: 100%;
   padding: 40px;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.8) 100%), url('../../assets/menu-back.png');
@@ -7,7 +8,7 @@
   background-position: center;
   color: white;
   font-family: "Arial", sans-serif;
-
+  padding-top: 80px;
 }
 
 .menu-title {
@@ -28,6 +29,7 @@
 
 .menu-container-wrapper {
   border: 1px solid white;
+  padding-bottom: 80px;
 }
 
 .menu-title::before,
@@ -44,8 +46,33 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
+  font-family: Kelly Slab;
+
 
 }
+
+.top-left-image {
+  position: absolute;
+  top: 10px;
+  /* Adjust the top spacing within the component */
+  left: 10px;
+  /* Adjust the left spacing within the component */
+  width: 130px;
+  height: auto;
+  z-index: 2;
+}
+
+.bottom-right-image {
+  position: absolute;
+  bottom: 10px;
+  /* Ensure it stays at the bottom of the container */
+  right: 10px;
+  /* Adjust the right spacing within the component */
+  width: 192px;
+  height: auto;
+  z-index: 2;
+}
+
 
 
 .menu-item {
@@ -66,6 +93,7 @@
   font-family: Oswald;
   font-size: 26px;
   line-height: 38px;
+  font-family: Oswald;
 
 }
 
@@ -73,13 +101,16 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #ffffff;
+  font-family: Oswald;
+  font-weight: 400;
 }
 
 .menu-dots::after {
-  content: "....................................................";
+  content: "............................................................";
+  font-family: Oswald;
   flex-grow: 1;
   text-align: center;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, );
   font-size: 1.2rem;
   overflow: hidden;
   white-space: nowrap;
@@ -94,17 +125,19 @@
 
 .item-description {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
   margin-top: 10px;
+  font-size: 18px;
+  color: #FFFFFFBF;
+
 }
 
-/* No items message */
 .no-items {
   text-align: center;
   margin-top: 20px;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.6);
 }
+
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {

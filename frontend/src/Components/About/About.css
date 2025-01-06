@@ -1,0 +1,117 @@
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: black;
+  padding: 40px 40px;
+  color: white;
+  gap: 20px;
+
+}
+
+.about-card,
+.about-center-card {
+  flex: 1;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  position: relative;
+  background-color: black;
+}
+
+.about-center-card {
+  position: relative;
+}
+
+.about-center-card img.about-logo {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: auto;
+  z-index: 1;
+  background-color: black;
+}
+
+.about-title {
+  color: #0796EF;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-family: Oswald, sans-serif;
+  font-weight: 500;
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-family: Oswald;
+  color: #857878;
+}
+
+.about-item img {
+  width: 15px;
+  height: 15px;
+  opacity: 0.9;
+}
+
+.about-company {
+  font-family: Oswald;
+  font-size: 35px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.about-company span {
+  color: white;
+}
+
+.about-company .deep {
+  color: #0796EF;
+}
+
+.about-company .soft {
+  color: #857878;
+}
+
+.about-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.about-socials img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about-card,
+  .about-center-card {
+    margin-bottom: 20px;
+  }
+
+  .about-center-card img.about-logo {
+    top: -30px;
+    width: 60px;
+
+  }
+}
