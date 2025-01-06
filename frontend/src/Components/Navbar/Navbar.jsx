@@ -36,13 +36,17 @@ const Navbar = () => {
           className={activeLink === "HOME" ? "active" : ""}
           onClick={() => handleLinkClick("HOME")}
         >
-          HOME
+          <Link to="/" className={activeLink === "HOME" ? "active" : ""}>
+            HOME
+          </Link>
         </li>
         <li
           className={activeLink === "ADMIN" ? "active" : ""}
           onClick={() => handleLinkClick("ADMIN")}
         >
-          <Link to="/admin">ADMIN</Link>
+          <Link to="/admin" className={activeLink === "ADMIN" ? "active" : ""}>
+            ADMIN
+          </Link>
         </li>
         <li
           className={activeLink === "MENU" ? "active" : ""}

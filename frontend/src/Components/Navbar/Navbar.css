@@ -64,6 +64,10 @@
   color: #0796ef;
 }
 
+.nav-links Link {
+  color: #0796ef;
+}
+
 /* Hamburger Menu */
 .hamburger {
   display: none;
