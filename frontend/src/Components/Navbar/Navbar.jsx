@@ -1,15 +1,19 @@
 import React from "react";
 import "./Navbar.css";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      {/* Logo Section */}
       <div className="logo">
-        <span>DEEP</span> <span className="highlight">NET</span> SOFT
+        <img src={logo} alt="Logo" />
+        <div className="company-name">
+          <span className="deep">DEEP</span>
+          <span className="highlight">NET</span>
+          <br />
+          <span className="soft">SOFT</span>
+        </div>
       </div>
-
-      {/* Navigation Links */}
       <ul className="nav-links">
         <li>HOME</li>
         <li className="active">MENU</li>

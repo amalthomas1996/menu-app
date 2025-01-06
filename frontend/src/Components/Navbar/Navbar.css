@@ -2,18 +2,42 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1d1d1d;
+  background-color: #121618;
+  height: 100px;
   padding: 10px 20px;
   color: #ffffff;
+  font-family: Oswald, sans-serif;
 }
 
 .logo {
-  font-size: 18px;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 3px;
+  margin-top: 100px;
+  margin-left: 100px;
 }
 
-.highlight {
+.logo img {
+  height: 50px;
+}
+
+.company-name {
+  text-align: left;
+}
+
+.company-name .deep {
+  font-size: 20px;
+}
+
+.company-name .highlight {
   color: #66ccff;
+  font-size: 20px;
+}
+
+.company-name .soft {
+  font-size: 15px;
+  color: #857878;
 }
 
 .nav-links {
@@ -26,6 +50,7 @@
   cursor: pointer;
 }
 
-.active {
-  text-decoration: underline;
+.nav-links .active {
+  text-decoration: none;
+  color: #0796EF;
 }
