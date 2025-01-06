@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AddMenu.css"; // Import the CSS file
+import "./Addmenu.css";
 import Navbar from "../Navbar/Navbar";
 
 const AddMenu = () => {
