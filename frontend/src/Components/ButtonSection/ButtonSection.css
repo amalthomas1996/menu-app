@@ -30,7 +30,7 @@
 .menu-button.active {
   background-color: #66ccff;
   color: #ffffff;
-  text-shadow: 0px 0px 0px #800020, 4px 3px 5px rgba(0, 0, 0, 0.0);
+  text-shadow: none;
 }
 
 .menu-button:hover {
@@ -47,13 +47,14 @@
   .menu-button {
     font-size: 13px;
     padding: 6px 10px;
-    width: 90px;
+    width: 100px;
+
   }
 }
 
 @media screen and (max-width: 480px) {
   .button-section {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 10px;
   }
@@ -61,7 +62,8 @@
   .menu-button {
     font-size: 12px;
     padding: 5px 8px;
-    width: auto;
+    width: 30%;
+    max-width: 200px;
     text-align: center;
   }
 }

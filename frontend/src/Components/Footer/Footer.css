@@ -2,34 +2,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 45px;
-  background-color: black;
-  color: #857878;
-  padding: 0 20px;
-  font-family: lato, sans-serif;
+  height: auto;
+  background-color: #121212;
+  color: #b3b3b3;
+  padding: 15px 20px;
+  font-family: 'Lato', sans-serif;
   font-size: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   box-sizing: border-box;
 }
 
 .footer-left {
+  flex: 1;
   text-align: left;
-  margin-left: 100px;
 }
 
 .footer-right {
+  flex: 1;
   text-align: right;
-  margin-right: 100px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .footer-link {
-  color: #857878;
+  color: #b3b3b3;
   text-decoration: none;
   margin-left: 20px;
   font-size: 14px;
+  transition: color 0.3s ease;
 }
 
 .footer-link:hover {
+  color: #ffffff;
   text-decoration: underline;
 }
 
@@ -37,16 +43,31 @@
   .footer {
     flex-direction: column;
     text-align: center;
-    height: auto;
-    padding: 10px 20px;
+    padding: 20px 10px;
   }
 
-  .footer-left,
-  .footer-right {
+  .footer-left {
     margin-bottom: 10px;
+    text-align: center;
   }
 
-  .footer-right .footer-link {
-    margin-left: 10px;
+  .footer-right {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-link {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 15px 10px;
+    font-size: 12px;
+  }
+
+  .footer-link {
+    font-size: 12px;
   }
 }
