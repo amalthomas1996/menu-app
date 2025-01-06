@@ -10,7 +10,9 @@ const ButtonSection = () => {
   useEffect(() => {
     const fetchMenus = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/menu");
+        const response = await fetch(
+          "https://menu-app-z7zc.onrender.com/api/menu"
+        );
         if (response.ok) {
           const data = await response.json();
           setMenus(data); // Set fetched menus

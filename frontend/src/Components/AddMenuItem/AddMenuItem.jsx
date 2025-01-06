@@ -14,7 +14,9 @@ const AddMenuItem = () => {
   useEffect(() => {
     const fetchMenus = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/menu");
+        const response = await fetch(
+          "https://menu-app-z7zc.onrender.com/api/menu"
+        );
         if (response.ok) {
           const data = await response.json();
           setMenus(data);
@@ -34,13 +36,16 @@ const AddMenuItem = () => {
     const newMenuItem = { menuId: selectedMenu, name, description, price };
 
     try {
-      const response = await fetch("http://localhost:5000/api/menu/add-item", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newMenuItem),
-      });
+      const response = await fetch(
+        "https://menu-app-z7zc.onrender.com/api/menu/add-item",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newMenuItem),
+        }
+      );
 
       if (response.ok) {
         alert("Menu Item added successfully!");

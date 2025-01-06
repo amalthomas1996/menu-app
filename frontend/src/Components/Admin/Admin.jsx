@@ -10,7 +10,9 @@ const Admin = () => {
   useEffect(() => {
     const fetchMenus = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/menu");
+        const response = await fetch(
+          "https://menu-app-z7zc.onrender.com/api/menu"
+        );
         if (response.ok) {
           const data = await response.json();
           setMenus(data);
@@ -29,7 +31,9 @@ const Admin = () => {
   useEffect(() => {
     const fetchMenus = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/menu");
+        const response = await fetch(
+          "https://menu-app-z7zc.onrender.com/api/menu"
+        );
         if (response.ok) {
           const data = await response.json();
           setMenus(data);
@@ -37,7 +41,7 @@ const Admin = () => {
           // After fetching menus, fetch the menu items for each menu
           for (let menu of data) {
             const itemResponse = await fetch(
-              `http://localhost:5000/api/menu/${menu._id}/items`
+              `https://menu-app-z7zc.onrender.com/api/menu/${menu._id}/items`
             );
             if (itemResponse.ok) {
               const itemData = await itemResponse.json();

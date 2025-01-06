@@ -14,13 +14,16 @@ const AddMenu = () => {
     const newMenu = { name, description };
 
     try {
-      const response = await fetch("http://localhost:5000/api/menu/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newMenu),
-      });
+      const response = await fetch(
+        "https://menu-app-z7zc.onrender.com/api/menu/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newMenu),
+        }
+      );
 
       if (response.ok) {
         alert("Menu created successfully!");
