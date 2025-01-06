@@ -15,7 +15,7 @@ const MenuDetails = ({ activeMenuId }) => {
       try {
         // Fetch menu name
         const menuResponse = await fetch(
-          `https://menu-app-z7zc.onrender.com/api/menu/${activeMenuId}`
+          `https://menu-app-backend-0gdw.onrender.com/api/menu/${activeMenuId}`
         );
         if (menuResponse.ok) {
           const menuData = await menuResponse.json();
@@ -27,7 +27,7 @@ const MenuDetails = ({ activeMenuId }) => {
 
         // Fetch the menu items
         const itemsResponse = await fetch(
-          `https://menu-app-z7zc.onrender.com/api/menu/${activeMenuId}/items`
+          `https://menu-app-backend-0gdw.onrender.com/api/menu/${activeMenuId}/items`
         );
         if (itemsResponse.ok) {
           const itemsData = await itemsResponse.json();
