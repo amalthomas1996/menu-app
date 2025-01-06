@@ -15,7 +15,7 @@ const AddMenuItem = () => {
     const fetchMenus = async () => {
       try {
         const response = await fetch(
-          "https://menu-app-z7zc.onrender.com/api/menu"
+          "https://menu-app-backend-0gdw.onrender.com/api/menu"
         );
         if (response.ok) {
           const data = await response.json();
@@ -37,7 +37,7 @@ const AddMenuItem = () => {
 
     try {
       const response = await fetch(
-        "https://menu-app-z7zc.onrender.com/api/menu/add-item",
+        "https://menu-app-backend-0gdw.onrender.com/api/menu/add-item",
         {
           method: "POST",
           headers: {
