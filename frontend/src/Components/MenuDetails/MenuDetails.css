@@ -1,83 +1,112 @@
-/* General Styles */
-.menu-details {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #000;
-  color: #fff;
-  border: 1px solid #333;
-  font-family: "Oswald", sans-serif;
-  text-align: center;
-  background-image: url("background-pattern.png");
+/* Updated CSS for Menu Details */
+.menu-details-container {
+  width: 100%;
+  padding: 40px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.8) 100%), url('../../assets/menu-back.png');
   background-size: cover;
-  background-blend-mode: multiply;
+  background-position: center;
+  color: white;
+  font-family: "Arial", sans-serif;
+
 }
 
-/* Title Section */
 .menu-title {
-  font-size: 24px;
+  display: flex;
+  font-family: Oswald;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 50px;
+  letter-spacing: 3px;
+  color: #f8f8f8;
   text-transform: uppercase;
-  color: #ff4d4f;
-  margin-bottom: 40px;
   position: relative;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 4px 3px 0px #800020, 4px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
 .menu-title::before,
 .menu-title::after {
   content: "";
-  position: absolute;
-  top: 50%;
+  width: 60px;
   height: 2px;
-  background: #fff;
-  width: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 15px;
 }
 
-.menu-title::before {
-  left: -120px;
+.menu-item-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
 }
 
-.menu-title::after {
-  right: -120px;
-}
-
-/* Menu List */
-.menu-list {
+.menu-item {
+  width: 48%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
-/* Menu Item */
-.menu-item {
-  position: relative;
-  padding: 20px;
-  text-align: left;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.menu-item-name {
-  font-size: 18px;
+.item-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: bold;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  font-family: Oswald;
+  font-size: 26px;
+  line-height: 38px;
+
 }
 
-.menu-item-dots {
-  flex: 1;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+.item-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.menu-dots::after {
+  content: "....................................................";
+  flex-grow: 1;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  overflow: hidden;
+  white-space: nowrap;
   margin: 0 10px;
 }
 
-.menu-item-price {
+.item-price {
+  font-size: 1.2rem;
+  font-weight: bold;
   color: #ffc107;
-  font-size: 18px;
 }
 
-.menu-item-description {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+.item-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
   margin-top: 10px;
+}
+
+/* No items message */
+.no-items {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .menu-item {
+    width: 100%;
+  }
+
+  .menu-item-container {
+    flex-direction: column;
+  }
 }

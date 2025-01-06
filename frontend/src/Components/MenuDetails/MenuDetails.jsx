@@ -1,94 +1,84 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import "./MenuDetails.css";
 
-const MenuDetails = ({ match }) => {
-  const [menu, setMenu] = useState(null); // Store the menu
-  const [menuItems, setMenuItems] = useState([]); // Store the menu items
-  const menuId = match.params.menuId; // Get menu ID from the URL (useRouteMatch for React Router)
+const MenuDetails = ({ activeMenuId }) => {
+  const [menuItems, setMenuItems] = useState([]); // State for menu items
+  const [menuName, setMenuName] = useState(""); // State for the menu name
+  const [loading, setLoading] = useState(true); // Loading state
+  const [error, setError] = useState(null); // State to capture error messages
 
   useEffect(() => {
-    // Fetch the menu details and items
-    const fetchMenuData = async () => {
+    const fetchMenuDetails = async () => {
+      if (!activeMenuId) return; // If no menu selected, return early
+
       try {
-        // Fetch the menu details
+        setLoading(true); // Set loading state when fetching data
+
+        // Fetch the menu details (name and items) using the activeMenuId
         const menuResponse = await fetch(
-          `http://localhost:5000/api/menu/${menuId}`
+          `http://localhost:5000/api/menu/${activeMenuId}`
         );
-        const menuData = await menuResponse.json();
-        setMenu(menuData);
+        if (menuResponse.ok) {
+          const menuData = await menuResponse.json();
+          setMenuName(menuData.name); // Set the menu name based on the fetched data
+        } else {
+          const errorData = await menuResponse.json();
+          setError(`Failed to fetch menu: ${errorData.message}`);
+        }
 
         // Fetch the menu items
         const itemsResponse = await fetch(
-          `http://localhost:5000/api/menu/${menuId}/items`
+          `http://localhost:5000/api/menu/${activeMenuId}/items`
         );
-        const itemsData = await itemsResponse.json();
-        setMenuItems(itemsData); // Store menu items
+        if (itemsResponse.ok) {
+          const itemsData = await itemsResponse.json();
+          setMenuItems(itemsData); // Set menu items based on activeMenuId
+        } else {
+          const errorData = await itemsResponse.json();
+          setError(`Failed to fetch menu items: ${errorData.message}`);
+        }
       } catch (error) {
-        console.error("Error fetching menu data:", error);
+        setError("An error occurred while fetching data");
+      } finally {
+        setLoading(false); // Stop loading when finished
       }
     };
 
-    fetchMenuData();
-  }, [menuId]); // Fetch new data when menuId changes
+    fetchMenuDetails();
+  }, [activeMenuId]);
 
-  // Split the items into two columns dynamically
-  const leftColumn = menuItems.filter((_, index) => index % 2 === 0); // Even-indexed items
-  const rightColumn = menuItems.filter((_, index) => index % 2 !== 0); // Odd-indexed items
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="error">{error}</div>; // Show error message if there's an issue
+  }
 
   return (
     <div className="menu-details-container">
-      {menu ? (
-        <>
-          <div className="menu-header">
-            <h2>{menu.name}</h2>
-            <p>{menu.description}</p>
-          </div>
+      {/* Dynamic Menu Title */}
+      <h2 className="menu-title">{menuName}</h2>
 
-          <div className="menu-columns">
-            <div className="menu-column menu-column-left">
-              {leftColumn.map((item, index) => (
-                <div className="menu-item" key={index}>
-                  <div className="menu-item-row">
-                    <h3>{item.name}</h3>
-                    <span className="menu-dots"></span>
-                    <span>{item.price}</span>
-                  </div>
-                  <p>{item.description}</p>
-                </div>
-              ))}
+      {/* Displaying dynamic menu name */}
+      {menuItems.length > 0 ? (
+        <div className="menu-item-container">
+          {menuItems.map((item, index) => (
+            <div className="menu-item" key={item._id}>
+              {/* Item Name and Price with Dots */}
+              <div className="item-header">
+                <span className="item-name">{item.name}</span>
+                <span className="menu-dots"></span>
+                <span className="item-price">${item.price}</span>
+              </div>
+
+              {/* Item Description */}
+              <p className="item-description">{item.description}</p>
             </div>
-
-            <div className="menu-column menu-column-right">
-              {rightColumn.map((item, index) => (
-                <div className="menu-item" key={index}>
-                  <div className="menu-item-row">
-                    <h3>{item.name}</h3>
-                    <span className="menu-dots"></span>
-                    <span>{item.price}</span>
-                  </div>
-                  <p>{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Optional: Display images related to the menu */}
-          <div className="menu-images">
-            <img
-              src="left-drink-image.png"
-              alt="Left Drink"
-              className="menu-image-left"
-            />
-            <img
-              src="right-drink-image.png"
-              alt="Right Drink"
-              className="menu-image-right"
-            />
-          </div>
-        </>
+          ))}
+        </div>
       ) : (
-        <p>Loading menu...</p>
+        <p className="no-items">No items available for this menu.</p>
       )}
     </div>
   );

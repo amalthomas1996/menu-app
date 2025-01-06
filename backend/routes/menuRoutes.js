@@ -13,6 +13,7 @@ router.get("/", menuController.getAllMenus);
 // Route for adding items to a menu
 router.post("/add-item", menuController.addMenuItem);
 
+router.get("/:menuId", menuController.getMenuById);
 
 // Route for fetching menu items for a specific menu
 router.get("/:menuId/items", menuController.getMenuItems);

@@ -68,3 +68,20 @@ exports.getMenuItems = async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 };
+
+exports.getMenuById = async (req, res) => {
+  try {
+    console.log("Received menuId:", req.params.menuId); // Add this line to log the received menuId
+
+    const menu = await Menu.findById(req.params.menuId);
+    if (!menu) {
+      return res.status(404).json({ message: "Menu not found" });
+    }
+    res.status(200).json(menu);
+  } catch (err) {
+    console.error("Error fetching menu by ID:", err); // Log the error
+    res.status(400).json({ message: err.message });
+  }
+};
+
+
