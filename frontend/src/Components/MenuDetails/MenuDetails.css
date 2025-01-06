@@ -66,8 +66,8 @@
 .bottom-right-image {
   position: absolute;
   bottom: 10px;
-  right: 10px;
-  width: 192px;
+  right: 50px;
+  width: 182px;
   height: auto;
   z-index: 2;
   transition: width 0.3s ease-in-out;
