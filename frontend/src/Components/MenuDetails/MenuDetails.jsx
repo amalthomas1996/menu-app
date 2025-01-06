@@ -57,29 +57,31 @@ const MenuDetails = ({ activeMenuId }) => {
 
   return (
     <div className="menu-details-container">
-      {/* Dynamic Menu Title */}
-      <h2 className="menu-title">{menuName}</h2>
+      <div className="menu-container-wrapper">
+        {/* Dynamic Menu Title */}
+        <h2 className="menu-title">{menuName}</h2>
 
-      {/* Displaying dynamic menu name */}
-      {menuItems.length > 0 ? (
-        <div className="menu-item-container">
-          {menuItems.map((item, index) => (
-            <div className="menu-item" key={item._id}>
-              {/* Item Name and Price with Dots */}
-              <div className="item-header">
-                <span className="item-name">{item.name}</span>
-                <span className="menu-dots"></span>
-                <span className="item-price">${item.price}</span>
+        {/* Displaying dynamic menu name */}
+        {menuItems.length > 0 ? (
+          <div className="menu-item-container">
+            {menuItems.map((item, index) => (
+              <div className="menu-item" key={item._id}>
+                {/* Item Name and Price with Dots */}
+                <div className="item-header">
+                  <span className="item-name">{item.name}</span>
+                  <span className="menu-dots"></span>
+                  <span className="item-price">${item.price}</span>
+                </div>
+
+                {/* Item Description */}
+                <p className="item-description">{item.description}</p>
               </div>
-
-              {/* Item Description */}
-              <p className="item-description">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p className="no-items">No items available for this menu.</p>
-      )}
+            ))}
+          </div>
+        ) : (
+          <p className="no-items">No items available for this menu.</p>
+        )}
+      </div>
     </div>
   );
 };

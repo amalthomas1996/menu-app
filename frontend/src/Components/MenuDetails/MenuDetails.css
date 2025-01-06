@@ -26,6 +26,10 @@
   text-shadow: 4px 3px 0px #800020, 4px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
+.menu-container-wrapper {
+  border: 1px solid white;
+}
+
 .menu-title::before,
 .menu-title::after {
   content: "";
@@ -40,7 +44,9 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
+
 }
+
 
 .menu-item {
   width: 48%;
