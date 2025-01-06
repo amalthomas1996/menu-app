@@ -11,7 +11,7 @@ const Admin = () => {
     const fetchMenus = async () => {
       try {
         const response = await fetch(
-          "https://menu-app-z7zc.onrender.com/api/menu"
+          "https://menu-app-backend-0gdw.onrender.com/api/menu"
         );
         if (response.ok) {
           const data = await response.json();
@@ -32,7 +32,7 @@ const Admin = () => {
     const fetchMenus = async () => {
       try {
         const response = await fetch(
-          "https://menu-app-z7zc.onrender.com/api/menu"
+          "https://menu-app-backend-0gdw.onrender.com/api/menu"
         );
         if (response.ok) {
           const data = await response.json();
@@ -41,7 +41,7 @@ const Admin = () => {
           // After fetching menus, fetch the menu items for each menu
           for (let menu of data) {
             const itemResponse = await fetch(
-              `https://menu-app-z7zc.onrender.com/api/menu/${menu._id}/items`
+              `https://menu-app-backend-0gdw.onrender.com/api/menu/${menu._id}/items`
             );
             if (itemResponse.ok) {
               const itemData = await itemResponse.json();

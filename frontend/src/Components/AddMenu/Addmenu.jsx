@@ -15,7 +15,7 @@ const AddMenu = () => {
 
     try {
       const response = await fetch(
-        "https://menu-app-z7zc.onrender.com/api/menu/create",
+        "https://menu-app-backend-0gdw.onrender.com/api/menu/create",
         {
           method: "POST",
           headers: {
