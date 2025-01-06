@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -19,6 +20,7 @@ const Navbar = () => {
         <li className="active">MENU</li>
         <li>MAKE A RESERVATION</li>
         <li>CONTACT US</li>
+        <Link to="/admin">ADMIN</Link>
       </ul>
     </nav>
   );

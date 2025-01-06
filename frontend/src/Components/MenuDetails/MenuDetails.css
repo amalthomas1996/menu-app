@@ -1,0 +1,83 @@
+/* General Styles */
+.menu-details {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #333;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  background-image: url("background-pattern.png");
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+/* Title Section */
+.menu-title {
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #ff4d4f;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.menu-title::before,
+.menu-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  background: #fff;
+  width: 100px;
+}
+
+.menu-title::before {
+  left: -120px;
+}
+
+.menu-title::after {
+  right: -120px;
+}
+
+/* Menu List */
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Menu Item */
+.menu-item {
+  position: relative;
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-item-name {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.menu-item-dots {
+  flex: 1;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+  margin: 0 10px;
+}
+
+.menu-item-price {
+  color: #ffc107;
+  font-size: 18px;
+}
+
+.menu-item-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 10px;
+}

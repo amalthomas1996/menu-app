@@ -1,0 +1,79 @@
+.admin-container {
+  background-color: #000;
+  color: #fff;
+  padding: 30px;
+  height: 100vh;
+
+}
+
+.admin-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #0796EF;
+}
+
+.admin-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.admin-link {
+  color: #fff;
+  background-color: #0796EF;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.admin-link:hover {
+  background-color: #0579C7;
+}
+
+.admin-link:active {
+  background-color: #04699E;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px;
+  border: 1px solid #444;
+}
+
+.admin-table th {
+  background-color: #1c1c1c;
+  color: #0796EF;
+}
+
+.admin-table td ol {
+  margin-left: 20px;
+}
+
+.view-menu-btn {
+  color: #fff;
+  background-color: #0796EF;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.view-menu-btn:hover {
+  background-color: #0579C7;
+}
+
+.view-menu-btn:active {
+  background-color: #04699E;
+}
