@@ -1,8 +1,11 @@
 .menu-section {
-  background: url('/path/to/dummy-image.jpg') center/cover no-repeat;
+  background: url('../../assets/banner-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #ffffff;
   text-align: center;
   padding: 60px 20px;
+  height: 311px;
 }
 
 .menu-section h1 {

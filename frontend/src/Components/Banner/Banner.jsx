@@ -1,7 +1,7 @@
 import React from "react";
-import "./MenuSection.module.css";
+import "./Banner.css";
 
-const MenuSection = () => {
+const Banner = () => {
   return (
     <section className="menu-section">
       <h1>MENU</h1>
@@ -14,4 +14,4 @@ const MenuSection = () => {
   );
 };
 
-export default MenuSection;
+export default Banner;
