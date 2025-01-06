@@ -3,8 +3,8 @@ import "./ButtonSection.css";
 import MenuDetails from "../MenuDetails/MenuDetails";
 
 const ButtonSection = () => {
-  const [menus, setMenus] = useState([]); // State to hold the fetched menus
-  const [activeMenuId, setActiveMenuId] = useState(null); // State for active menu id
+  const [menus, setMenus] = useState([]);
+  const [activeMenuId, setActiveMenuId] = useState(null);
 
   // Fetch menus from backend
   useEffect(() => {

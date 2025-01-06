@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AddMenuItem.css"; // Import the CSS file
+import Navbar from "../Navbar/Navbar";
 
 const AddMenuItem = () => {
   const [name, setName] = useState("");
@@ -54,58 +55,61 @@ const AddMenuItem = () => {
   };
 
   return (
-    <div className="add-menu-item-container">
-      <form className="add-menu-item-form" onSubmit={handleSubmit}>
-        <h2 className="add-menu-item-title">Add Menu Item</h2>
-        <div className="form-group">
-          <label className="form-label">Menu</label>
-          <select
-            className="form-select"
-            value={selectedMenu}
-            onChange={(e) => setSelectedMenu(e.target.value)}
-            required
-          >
-            <option value="">Select a menu</option>
-            {menus.map((menu) => (
-              <option key={menu._id} value={menu._id}>
-                {menu.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="form-group">
-          <label className="form-label">Item Name</label>
-          <input
-            className="form-input"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label className="form-label">Description</label>
-          <textarea
-            className="form-textarea"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          ></textarea>
-        </div>
-        <div className="form-group">
-          <label className="form-label">Price</label>
-          <input
-            className="form-input"
-            type="number"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            required
-          />
-        </div>
-        <button className="submit-button" type="submit">
-          Add Item
-        </button>
-      </form>
+    <div>
+      <Navbar />
+      <div className="add-menu-item-container">
+        <form className="add-menu-item-form" onSubmit={handleSubmit}>
+          <h2 className="add-menu-item-title">Add Menu Item</h2>
+          <div className="form-group">
+            <label className="form-label">Menu</label>
+            <select
+              className="form-select"
+              value={selectedMenu}
+              onChange={(e) => setSelectedMenu(e.target.value)}
+              required
+            >
+              <option value="">Select a menu</option>
+              {menus.map((menu) => (
+                <option key={menu._id} value={menu._id}>
+                  {menu.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="form-group">
+            <label className="form-label">Item Name</label>
+            <input
+              className="form-input"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label className="form-label">Description</label>
+            <textarea
+              className="form-textarea"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+            ></textarea>
+          </div>
+          <div className="form-group">
+            <label className="form-label">Price</label>
+            <input
+              className="form-input"
+              type="number"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              required
+            />
+          </div>
+          <button className="submit-button" type="submit">
+            Add Item
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

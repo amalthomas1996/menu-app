@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AddMenu.css"; // Import the CSS file
+import Navbar from "../Navbar/Navbar";
 
 const AddMenu = () => {
   const [name, setName] = useState("");
@@ -34,32 +35,35 @@ const AddMenu = () => {
   };
 
   return (
-    <div className="add-menu-container">
-      <form onSubmit={handleSubmit} className="add-menu-form">
-        <h2 className="add-menu-title">Add New Menu</h2>
-        <div className="form-group">
-          <label className="form-label">Menu Name</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            className="form-input"
-          />
-        </div>
-        <div className="form-group">
-          <label className="form-label">Description</label>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-            className="form-textarea"
-          ></textarea>
-        </div>
-        <button type="submit" className="submit-button">
-          Create Menu
-        </button>
-      </form>
+    <div>
+      <Navbar />
+      <div className="add-menu-container">
+        <form onSubmit={handleSubmit} className="add-menu-form">
+          <h2 className="add-menu-title">Add New Menu</h2>
+          <div className="form-group">
+            <label className="form-label">Menu Name</label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              className="form-input"
+            />
+          </div>
+          <div className="form-group">
+            <label className="form-label">Description</label>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+              className="form-textarea"
+            ></textarea>
+          </div>
+          <button type="submit" className="submit-button">
+            Create Menu
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

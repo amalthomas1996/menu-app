@@ -1,9 +1,11 @@
 .menu-details-container {
   position: relative;
-  /* Make this container the positioning context */
   width: 100%;
   padding: 40px;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.8) 100%), url('../../assets/menu-back.png');
+  background: linear-gradient(90deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.8) 100%),
+    url('../../assets/menu-back.png');
   background-size: cover;
   background-position: center;
   color: white;
@@ -13,7 +15,7 @@
 
 .menu-title {
   display: flex;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
@@ -23,13 +25,13 @@
   color: #f8f8f8;
   text-transform: uppercase;
   position: relative;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   text-shadow: 4px 3px 0px #800020, 4px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
 .menu-container-wrapper {
   border: 1px solid white;
   padding-bottom: 80px;
+  border-radius: 10px;
 }
 
 .menu-title::before,
@@ -46,40 +48,68 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
-  font-family: Kelly Slab;
-
-
+  font-family: Kelly Slab, sans-serif;
 }
 
 .top-left-image {
   position: absolute;
   top: 10px;
-  /* Adjust the top spacing within the component */
   left: 10px;
-  /* Adjust the left spacing within the component */
   width: 130px;
   height: auto;
   z-index: 2;
+  transition: width 0.3s ease-in-out;
 }
 
 .bottom-right-image {
   position: absolute;
   bottom: 10px;
-  /* Ensure it stays at the bottom of the container */
   right: 10px;
-  /* Adjust the right spacing within the component */
   width: 192px;
   height: auto;
   z-index: 2;
+  transition: width 0.3s ease-in-out;
 }
 
+@media screen and (max-width: 1024px) {
+  .top-left-image {
+    width: 100px;
+  }
 
+  .bottom-right-image {
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top-left-image {
+    width: 80px;
+  }
+
+  .bottom-right-image {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .top-left-image {
+    width: 60px;
+    top: 5px;
+    left: 5px;
+  }
+
+  .bottom-right-image {
+    width: 90px;
+    bottom: 5px;
+    right: 5px;
+  }
+}
 
 .menu-item {
   width: 48%;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
   display: flex;
   flex-direction: column;
 }
@@ -90,11 +120,9 @@
   justify-content: space-between;
   width: 100%;
   position: relative;
-  font-family: Oswald;
-  font-size: 26px;
-  line-height: 38px;
-  font-family: Oswald;
-
+  font-family: Oswald, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.5;
 }
 
 .item-name {
@@ -102,33 +130,30 @@
   font-weight: bold;
   color: #ffffff;
   font-family: Oswald;
-  font-weight: 400;
 }
 
 .menu-dots::after {
   content: "............................................................";
-  font-family: Oswald;
-  flex-grow: 1;
+  font-family: Oswald, sans-serif;
   text-align: center;
-  color: rgba(255, 255, 255, );
+  color: rgba(255, 255, 255, 0.5);
   font-size: 1.2rem;
   overflow: hidden;
   white-space: nowrap;
   margin: 0 10px;
+  font-family: Oswald;
 }
 
 .item-price {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #ffc107;
+  color: #ffffff;
 }
 
 .item-description {
   font-size: 1rem;
   margin-top: 10px;
-  font-size: 18px;
-  color: #FFFFFFBF;
-
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .no-items {
@@ -138,8 +163,17 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
-
 /* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+  .menu-item {
+    width: 48%;
+  }
+
+  .menu-title {
+    font-size: 2rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .menu-item {
     width: 100%;
@@ -147,5 +181,46 @@
 
   .menu-item-container {
     flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menu-details-container {
+    padding: 20px;
+  }
+
+  .menu-title {
+    font-size: 1.5rem;
+  }
+
+  .menu-item {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .item-header {
+    font-size: 1rem;
+  }
+
+  .item-name {
+    font-size: 1.2rem;
+  }
+
+  .item-price {
+    font-size: 1rem;
+  }
+
+  .item-description {
+    font-size: 0.9rem;
+  }
+
+  .top-left-image,
+  .bottom-right-image {
+    width: 100px;
   }
 }

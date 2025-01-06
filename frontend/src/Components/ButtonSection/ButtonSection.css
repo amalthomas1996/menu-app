@@ -1,17 +1,20 @@
 .button-section {
   display: flex;
   justify-content: center;
-  gap: 50px;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.8) 100%), url('../../assets/banner-2.png');
-  background-size: contain;
-  padding: 20px 0;
-
-
+  flex-wrap: wrap;
+  gap: 20px;
+  background: linear-gradient(90deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.8) 100%),
+    url('../../assets/banner-2.png');
+  background-size: cover;
+  background-position: center;
+  padding: 20px 10px;
 }
 
 .menu-button {
   background-color: black;
-  color: #FFFFFF;
+  color: #ffffff;
   border: 1px solid #66ccff;
   padding: 10px 20px;
   font-size: 16px;
@@ -20,18 +23,45 @@
   cursor: pointer;
   text-transform: uppercase;
   width: 114px;
-  display: inline-block;
   text-shadow: 2px 1px 0px #800020, 4px 3px 5px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease-in-out;
 }
 
 .menu-button.active {
   background-color: #66ccff;
   color: #ffffff;
-
   text-shadow: 0px 0px 0px #800020, 4px 3px 5px rgba(0, 0, 0, 0.0);
 }
 
 .menu-button:hover {
   transform: scale(1.05);
-  transition: 0.3s ease-in-out;
+}
+
+
+@media screen and (max-width: 768px) {
+  .button-section {
+    gap: 10px;
+    padding: 15px 5px;
+  }
+
+  .menu-button {
+    font-size: 13px;
+    padding: 6px 10px;
+    width: 90px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .button-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .menu-button {
+    font-size: 12px;
+    padding: 5px 8px;
+    width: auto;
+    text-align: center;
+  }
 }

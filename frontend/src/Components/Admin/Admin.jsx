@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Admin.css"; // Import the CSS file for styling
-
+import "./Admin.css";
+import Navbar from "../Navbar/Navbar";
 const Admin = () => {
   const [menus, setMenus] = useState([]);
   const [menuItems, setMenuItems] = useState({});
@@ -59,43 +59,49 @@ const Admin = () => {
   }, []);
 
   return (
-    <div className="admin-container">
-      <h2 className="admin-title">Admin Dashboard</h2>
-      <div className="admin-actions">
-        <Link to="/addmenu" className="admin-link add-menu-btn">
-          Add New Menu
-        </Link>
-        <Link to="/additem/:menuId" className="admin-link add-item-btn">
-          Add New Menu Item
-        </Link>
-      </div>
+    <div>
+      <Navbar />
+      <div className="admin-container">
+        <h2 className="admin-title">Admin Dashboard</h2>
+        <div className="admin-actions">
+          <Link to="/addmenu" className="admin-link add-menu-btn">
+            Add New Menu
+          </Link>
+          <Link to="/additem/:menuId" className="admin-link add-item-btn">
+            Add New Menu Item
+          </Link>
+          <Link to="/" className="admin-link add-item-btn">
+            Home
+          </Link>
+        </div>
 
-      <table className="admin-table">
-        <thead>
-          <tr>
-            <th>Menu Name</th>
-            <th>Menu Description</th>
-            <th>Menu Items</th>
-          </tr>
-        </thead>
-        <tbody>
-          {menus.map((menu) => (
-            <tr key={menu._id}>
-              <td>{menu.name}</td>
-              <td>{menu.description}</td>
-              <td>
-                <ol>
-                  {menuItems[menu._id]?.map((item) => (
-                    <li key={item._id}>
-                      {item.name} - ${item.price}
-                    </li>
-                  ))}
-                </ol>
-              </td>
+        <table className="admin-table">
+          <thead>
+            <tr>
+              <th>Menu Name</th>
+              <th>Menu Description</th>
+              <th>Menu Items</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {menus.map((menu) => (
+              <tr key={menu._id}>
+                <td>{menu.name}</td>
+                <td>{menu.description}</td>
+                <td>
+                  <ol>
+                    {menuItems[menu._id]?.map((item) => (
+                      <li key={item._id}>
+                        {item.name} - ${item.price}
+                      </li>
+                    ))}
+                  </ol>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
