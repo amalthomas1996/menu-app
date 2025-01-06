@@ -3,9 +3,9 @@
       rgba(0, 0, 0, 0.71) 0%,
       rgba(0, 0, 0, 0.5) 100%),
     url('../../assets/banner-1.jpg');
-  background-repeat: no-repeat;
+
   background-size: cover;
-  background-position: center;
+  background-position: top;
   color: #ffffff;
   text-align: center;
   padding: 60px 20px;

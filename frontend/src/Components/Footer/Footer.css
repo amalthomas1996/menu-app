@@ -15,6 +15,7 @@
 .footer-left {
   flex: 1;
   text-align: left;
+  margin-left: 50px;
 }
 
 .footer-right {
@@ -24,6 +25,7 @@
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 10px;
+  margin-right: 50px;
 }
 
 .footer-link {

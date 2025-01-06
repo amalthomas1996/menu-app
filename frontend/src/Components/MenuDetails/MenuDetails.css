@@ -29,14 +29,6 @@
   text-shadow: 4px 3px 0px #800020, 4px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
-.menu-container-wrapper {
-  border: 1px solid white;
-  padding-bottom: 80px;
-
-
-
-}
-
 .menu-title::before,
 .menu-title::after {
   content: "";
@@ -44,6 +36,11 @@
   height: 2px;
   background-color: rgba(255, 255, 255, 0.3);
   margin: 0 15px;
+}
+
+.menu-container-wrapper {
+  border: 1px solid white;
+  padding-bottom: 80px;
 }
 
 .menu-item-container {
@@ -129,25 +126,24 @@
 }
 
 .item-name {
+  flex-shrink: 0;
   font-size: 1.5rem;
   font-weight: bold;
   color: #ffffff;
-  font-family: Oswald;
 }
 
-.menu-dots::after {
-  content: "............................................................";
-  font-family: Oswald, sans-serif;
-  text-align: center;
+.menu-dots {
+  flex: 1;
+  margin: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   color: rgba(255, 255, 255, 0.5);
   font-size: 1.2rem;
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 0 10px;
-  font-family: Oswald;
 }
 
 .item-price {
+  flex-shrink: 0;
   font-size: 1.2rem;
   font-weight: bold;
   color: #ffffff;
@@ -166,7 +162,18 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* Responsive Adjustments */
+.menu-dots {
+  flex: 1;
+  border-bottom: 2px dotted rgba(255, 255, 255, 0.5);
+  margin: 0 10px;
+  margin-bottom: -20px;
+  height: 1px;
+  overflow: hidden;
+
+
+}
+
+/* Responsive  */
 @media screen and (max-width: 1024px) {
   .menu-item {
     width: 48%;
@@ -206,7 +213,6 @@
   .menu-item {
     width: 100%;
     padding: 15px;
-
   }
 
   .item-header {
