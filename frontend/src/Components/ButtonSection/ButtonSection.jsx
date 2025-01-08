@@ -17,7 +17,7 @@ const ButtonSection = () => {
           const data = await response.json();
           setMenus(data); // Set fetched menus
           if (data.length > 0) {
-            setActiveMenuId(data[0]._id); // Set default active menu id (first one)
+            setActiveMenuId(data[0]._id);
           }
         } else {
           console.error("Failed to fetch menus");
